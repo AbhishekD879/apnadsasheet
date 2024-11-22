@@ -78,7 +78,7 @@ class ApiCaller {
           ? (await response.json()).message || response.statusText
           : response.statusText;
 
-        throw new Error(`Error: ${response.status} - ${errorMessage}`);
+         throw new Error(`Error: ${response.status} - ${errorMessage}`);
       }
 
       const data: T = contentType.includes("application/json")
@@ -105,7 +105,7 @@ class ApiCaller {
 }
 
 const baseUrls = {
-  auth: "https://i62xylro0m.execute-api.ap-south-1.amazonaws.com/dev/api/auth",
+  auth: `${import.meta.env.BACKEND}/api/auth"`,
   data: "https://data.example.com/api",
   problem: "https://problem.example.com/api",
   default: "https://default.example.com/api",
