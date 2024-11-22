@@ -10,7 +10,7 @@ const Protected = ({ children }: PropsWithChildren) => {
     if (auth === null || auth.id === "") {
       navigate("/auth", { replace: true });
     }
-  }, [navigate, auth.id]);
+  }, [navigate, auth.id,auth.authLoading]);
   if (auth.authLoading) {
     return <LoadingPage />;
   }
