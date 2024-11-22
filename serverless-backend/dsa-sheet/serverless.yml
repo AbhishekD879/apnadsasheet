@@ -31,7 +31,7 @@ functions:
     handler: services/auth-api/handler.handler
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: "ANY {proxy+}"
 #      - http:
 #          method: any
 #          path: ${self:provider.environment.AUTH_SERVICE_URL}{any+}

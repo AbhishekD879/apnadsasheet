@@ -1,3 +1,3 @@
 import Protected from "@/components/util/Protected.tsx";
 
-export {Protected}
+export { Protected };

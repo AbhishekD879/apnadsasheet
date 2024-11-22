@@ -1,4 +1,4 @@
-import {validateSessionToken} from "../../auth-utils/index.js";
+import { validateSessionToken } from "../../auth-utils/index.js";
 
 export const handler = async (event, context, callback) => {
   const cookies = event.headers.Cookie || event.headers.cookie;
@@ -23,10 +23,7 @@ export const handler = async (event, context, callback) => {
     console.log("Session", session);
     console.log("User", user);
     if (session) {
-      return callback(
-        null,
-        generatePolicy(user.id, "Allow", event.methodArn),
-      );
+      return callback(null, generatePolicy(user.id, "Allow", event.methodArn));
     } else {
       return callback(null, generatePolicy("user", "Deny", event.methodArn));
     }
