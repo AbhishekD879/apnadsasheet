@@ -1,0 +1,40 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: abhishekorg
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: apnadsasheet
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: dsa-sheet
+
+#custom:
+#    webpack:
+#        webpackConfig: ./webpack.config.cjs
+#        includeModules: true
+#
+#    esbuild: false
+#
+#build:
+#  esbuild: false
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  environment:
+    NODE_ENV: ${env:NODE_ENV,"development"}
+    DATABASE_URL: ${env:DATABASE_URL,"postgresql://neondb_owner:do6YMlswF2zy@ep-cold-field-a1057to4.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"}
+    AUTH_SERVICE_URL: "/api/auth"
+
+functions:
+  tokenAuthorizer:
+    handler: services/auth-authorizor/handler.handler
+  auth:
+    handler: services/auth-api/handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+#      - http:
+#          method: any
+#          path: ${self:provider.environment.AUTH_SERVICE_URL}{any+}
+#          cors: true
+#plugins:
+#  - serverless-webpack
