@@ -39,7 +39,7 @@ export interface Problem {
 export interface Chapter {
   id: string;
   name: string;
-  icon: unknown;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   progress: number;
   problems: Problem[];
 }
@@ -47,7 +47,7 @@ export interface Chapter {
 export interface Topic {
   id: string;
   name: string;
-  icon: unknown;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   progress: number;
   chapters: Chapter[];
 }
