@@ -105,7 +105,7 @@ class ApiCaller {
 }
 
 const baseUrls = {
-  auth: `${import.meta.env.BACKEND}/api/auth"`,
+  auth: `${import.meta.env.VITE_BACKEND}/api/auth"`,
   data: "https://data.example.com/api",
   problem: "https://problem.example.com/api",
   default: "https://default.example.com/api",
