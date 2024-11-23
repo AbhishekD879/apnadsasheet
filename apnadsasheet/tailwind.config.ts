@@ -85,7 +85,7 @@ const config: Config = {
             height: "0",
           },
         },
-        "spin-slow": {
+        "spin": {
           from: {
             transform: "rotate(0deg)",
           },

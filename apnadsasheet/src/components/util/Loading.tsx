@@ -9,7 +9,7 @@ export default function LoadingPage() {
           <div className="relative w-24 h-24 mb-4">
             <div className="absolute inset-0 border-4 border-blue-200 rounded-full"></div>
             <div
-              className="absolute inset-0 border-4 border-blue-600 rounded-full animate-spin-slow"
+              className="absolute inset-0 border-4 border-blue-600 rounded-full animate-spin-slow spinner"
               style={{
                 borderRightColor: "transparent",
                 borderTopColor: "transparent",

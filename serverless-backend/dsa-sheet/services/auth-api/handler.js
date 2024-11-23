@@ -7,7 +7,7 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:5173" || "*", // You can specify allowed origins or use '*' for all
+  origin: "https://apnadsasheet.vercel.app" || "*", // You can specify allowed origins or use '*' for all
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   optionsSuccessStatus: 204,
